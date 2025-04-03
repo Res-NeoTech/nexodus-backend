@@ -1,6 +1,0 @@
-@NexodusAPI_HostAddress = http://localhost:5125
-
-GET {{NexodusAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
