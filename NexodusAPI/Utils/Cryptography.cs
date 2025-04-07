@@ -4,6 +4,11 @@ namespace NexodusAPI.Utils
 {
     public class Cryptography
     {
+        /// <summary>
+        /// Hashes a password using PBKDF2 with SHA256.
+        /// </summary>
+        /// <param name="password">Password to hash.</param>
+        /// <returns>Hashed password string.</returns>
         public static string HashPassword(string password)
         {
             using (var rng = RandomNumberGenerator.Create())
@@ -26,6 +31,12 @@ namespace NexodusAPI.Utils
             }
         }
 
+        /// <summary>
+        /// Verifies a password against a stored hash.
+        /// </summary>
+        /// <param name="password">Password to verify.</param>
+        /// <param name="storedHash">Real hashed password.</param>
+        /// <returns>True if the entered password is correct.</returns>
         public static bool VerifyPassword(string password, string storedHash)
         {
             byte[] hashBytes = Convert.FromBase64String(storedHash);
@@ -47,6 +58,21 @@ namespace NexodusAPI.Utils
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Generates a token for the user using HMACSHA256.
+        /// </summary>
+        /// <param name="email">email is used as a seed.</param>
+        /// <returns>a token string.</returns>
+        public static string GenerateToken(string email)
+        {
+            // Generate a token using HMACSHA256
+            using (var hmac = new HMACSHA256())
+            {
+                byte[] tokenBytes = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(email));
+                return Convert.ToBase64String(tokenBytes);
+            }
         }
     }
 }

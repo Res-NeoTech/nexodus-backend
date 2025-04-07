@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "NexodusAPI.Controllers.UserController",
+    "Method": "Authentificate",
+    "RelativePath": "crud/auth",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "NexodusAPI.Models.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "crud/User",
     "HttpMethod": "POST",
@@ -11,6 +27,22 @@
         "Name": "user",
         "Type": "NexodusAPI.Models.User",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "crud/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Authorization",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

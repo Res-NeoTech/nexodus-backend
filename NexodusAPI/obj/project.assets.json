@@ -1613,23 +1613,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ptysi\\.nuget\\packages\\": {},
+    "C:\\Users\\Maksym\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\nexodus-backend\\NexodusAPI\\NexodusAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\NexodusAPI.csproj",
       "projectName": "NexodusAPI",
-      "projectPath": "D:\\nexodus-backend\\NexodusAPI\\NexodusAPI.csproj",
-      "packagesPath": "C:\\Users\\ptysi\\.nuget\\packages\\",
-      "outputPath": "D:\\nexodus-backend\\NexodusAPI\\obj\\",
+      "projectPath": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\NexodusAPI.csproj",
+      "packagesPath": "C:\\Users\\Maksym\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ptysi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maksym\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
