@@ -37,7 +37,7 @@ namespace NexodusAPI.Controllers
                 return BadRequest("Message is null.");
             }
 
-            if(message.Role != "user" || string.IsNullOrWhiteSpace(message.Content))
+            if(message.Role != "user" || string.IsNullOrWhiteSpace(message.Content)) // In a priori it's always the user who initiates the conversation. That's why at creating the new chat, user role is the first one.
             {
                 return BadRequest("Some parameters are either incorrect or missing.");
             }
@@ -155,7 +155,7 @@ namespace NexodusAPI.Controllers
         {
             if(update == null)
             {
-                return BadRequest("Message is null.");
+                return BadRequest("Update info is null.");
             }
 
             if(string.IsNullOrWhiteSpace(update.Id) || string.IsNullOrWhiteSpace(update.Title))
@@ -166,7 +166,7 @@ namespace NexodusAPI.Controllers
             if (await AuthenticateByToken(nexodusToken)) 
             {
                 string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == nexodusToken).FirstOrDefaultAsync()).Id;
+                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
                 Chat requestedChat;
 
                 try
@@ -187,6 +187,69 @@ namespace NexodusAPI.Controllers
 
                         await _chatContext.Chats.ReplaceOneAsync(c => c.Id == requestedChat.Id, requestedChat);
                         return Ok("Chat Title was changed with success.");
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status403Forbidden, "User doesn't have permission to access this resource.");
+                    }
+                }
+                else
+                {
+                    return NotFound("Requested chat doesn't exist.");
+                }
+            } 
+            else
+            {
+                return Unauthorized("Invalid format or unknown user.");
+            }
+        }
+
+        /// <summary>
+        /// Appends new message to a chat if it belongs to the authenticated user.
+        /// </summary>
+        /// <param name="newMessage">Message class to append.</param>
+        /// <param name="nexodusToken">Nexodus authentication token.</param>
+        /// <param name="chatId">Id of the requested chat.</param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("/chats/append")]
+        public async Task<IActionResult> AppendChatContent([FromBody] Message newMessage, [FromHeader (Name = "Authorization")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
+        {
+            if (newMessage == null)
+            {
+                return BadRequest("Message is null.");
+            }
+
+            if(string.IsNullOrWhiteSpace(newMessage.Content) || !new[] { "user", "assistant" }.Contains(newMessage.Role)) // Only user and assistant roles are accepted via Mistral API. We aren't using booleans in the case Mistral API will support more roles in the future.
+            {
+                return BadRequest("Some parameters are either incorrect or missing.");
+            }
+
+            if(await AuthenticateByToken(nexodusToken))
+            {
+                string token = nexodusToken.Substring(8);
+                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                Chat requestedChat;
+
+                try
+                {
+                    requestedChat = await _chatContext.Chats.Find(c => c.Id == chatId).FirstOrDefaultAsync();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+                if (requestedChat != null)
+                {
+                    if (await AuthorizeUser(userId, requestedChat.Id))
+                    {
+                        newMessage.Content = HttpUtility.HtmlEncode(newMessage.Content).Trim();
+                        requestedChat.Messages.Add(newMessage);
+
+                        await _chatContext.Chats.ReplaceOneAsync(c => c.Id == requestedChat.Id, requestedChat);
+
+                        return Ok("New message was succesfully appended.");
                     }
                     else
                     {

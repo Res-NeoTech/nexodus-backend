@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "AppendChatContent",
+    "RelativePath": "chats/append",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newMessage",
+        "Type": "NexodusAPI.Models.Message",
+        "IsRequired": true
+      },
+      {
+        "Name": "Authorization",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
     "Method": "CreateChat",
     "RelativePath": "chats/Chat",
     "HttpMethod": "POST",
@@ -35,6 +61,27 @@
       },
       {
         "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "UpdateChatTitle",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "update",
+        "Type": "NexodusAPI.Models.UpdateChat",
+        "IsRequired": true
+      },
+      {
+        "Name": "Authorization",
         "Type": "System.String",
         "IsRequired": false
       }
