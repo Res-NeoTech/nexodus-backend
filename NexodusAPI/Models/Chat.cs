@@ -12,6 +12,8 @@ public class Chat
     [BsonRepresentation(BsonType.ObjectId)]
     public string UserId { get; set; } = string.Empty;
 
+    public string Title { get; set; } = string.Empty;
+
     public List<Message> Messages { get; set; } = new List<Message>();
 
     public DateTime CreatedAt { get; set; }

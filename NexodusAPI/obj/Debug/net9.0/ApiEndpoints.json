@@ -73,6 +73,22 @@
     ]
   },
   {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "GetAllChats",
+    "RelativePath": "chats/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Authorization",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NexodusAPI.Controllers.UserController",
     "Method": "Authenticate",
     "RelativePath": "crud/auth",

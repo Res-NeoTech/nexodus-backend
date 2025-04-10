@@ -1,50 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\nexodus-backend\\",
+  "WorkspaceRootPath": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\chatdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\chatdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\updatechat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\updatechat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\utils\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\utils\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|d:\\nexodus-backend\\nexodusapi\\models\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\chatcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\utils\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\utils\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|c:\\users\\maksym\\documents\\github\\nexodus-backend\\nexodusapi\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B346D0A-8D9C-4BFA-819B-D19C9B7DE381}|NexodusAPI\\NexodusAPI.csproj|solutionrelative:nexodusapi\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,77 +62,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ChatContext.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\ChatContext.cs",
-              "RelativeDocumentMoniker": "NexodusAPI\\Models\\ChatContext.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\ChatContext.cs",
-              "RelativeToolTip": "NexodusAPI\\Models\\ChatContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAmAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "UpdateChat.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\UpdateChat.cs",
+              "RelativeDocumentMoniker": "NexodusAPI\\Models\\UpdateChat.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\UpdateChat.cs",
+              "RelativeToolTip": "NexodusAPI\\Models\\UpdateChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T20:25:53.911Z"
+              "WhenOpened": "2025-04-10T12:15:03.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\ChatDTO.cs",
+              "RelativeDocumentMoniker": "NexodusAPI\\Models\\ChatDTO.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\ChatDTO.cs",
+              "RelativeToolTip": "NexodusAPI\\Models\\ChatDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T08:50:55.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChatContext.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\ChatContext.cs",
+              "RelativeDocumentMoniker": "NexodusAPI\\Models\\ChatContext.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\ChatContext.cs",
+              "RelativeToolTip": "NexodusAPI\\Models\\ChatContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T20:25:53.911Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ChatController.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Controllers\\ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Controllers\\ChatController.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Controllers\\ChatController.cs",
               "RelativeToolTip": "NexodusAPI\\Controllers\\ChatController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAwwFcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAwKQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T19:52:29.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "User.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\User.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Models\\User.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\User.cs",
               "RelativeToolTip": "NexodusAPI\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:43:22.491Z",
+              "WhenOpened": "2025-04-03T20:43:22.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "NexodusAPI\\Models\\Login.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Login.cs",
+              "RelativeToolTip": "NexodusAPI\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T07:39:44.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\Login.cs",
-              "RelativeDocumentMoniker": "NexodusAPI\\Models\\Login.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\Login.cs",
-              "RelativeToolTip": "NexodusAPI\\Models\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T07:39:44.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\appsettings.json",
               "RelativeDocumentMoniker": "NexodusAPI\\appsettings.json",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\appsettings.json",
               "RelativeToolTip": "NexodusAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-03T21:06:53.45Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Program.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Program.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Program.cs",
               "RelativeToolTip": "NexodusAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -132,37 +167,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Cryptography.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Utils\\Cryptography.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Utils\\Cryptography.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Utils\\Cryptography.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Utils\\Cryptography.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Utils\\Cryptography.cs",
               "RelativeToolTip": "NexodusAPI\\Utils\\Cryptography.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:43:34.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T20:43:34.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "NexodusAPI\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAwwKUAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowD4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T20:43:26.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "UserContext.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\UserContext.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\UserContext.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Models\\UserContext.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\UserContext.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\UserContext.cs",
               "RelativeToolTip": "NexodusAPI\\Models\\UserContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -170,11 +204,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Message.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\Message.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Message.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Models\\Message.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Message.cs",
               "RelativeToolTip": "NexodusAPI\\Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -182,13 +216,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Chat.cs",
-              "DocumentMoniker": "D:\\nexodus-backend\\NexodusAPI\\Models\\Chat.cs",
+              "DocumentMoniker": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Chat.cs",
               "RelativeDocumentMoniker": "NexodusAPI\\Models\\Chat.cs",
-              "ToolTip": "D:\\nexodus-backend\\NexodusAPI\\Models\\Chat.cs",
+              "ToolTip": "C:\\Users\\Maksym\\Documents\\GitHub\\nexodus-backend\\NexodusAPI\\Models\\Chat.cs",
               "RelativeToolTip": "NexodusAPI\\Models\\Chat.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T20:43:19.029Z"
             }

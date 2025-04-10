@@ -50,6 +50,7 @@ namespace NexodusAPI.Controllers
 
                 Chat newChat = new();
                 newChat.UserId = userId;
+                newChat.Title = "New chat";
                 newChat.Messages.Add(message);
 
                 await _chatContext.Chats.InsertOneAsync(newChat);
@@ -93,7 +94,7 @@ namespace NexodusAPI.Controllers
 
                 if (requestedChat != null) 
                 {
-                    if (await AuthorizeUser(userId, requestedChat.Id)) 
+                    if (await AuthorizeUser(userId, requestedChat.Id))
                     {
                         return Ok(requestedChat);
                     } 
@@ -102,6 +103,96 @@ namespace NexodusAPI.Controllers
                         return StatusCode(StatusCodes.Status403Forbidden, "User doesn't have permission to access this resource.");
                     }
                 } 
+                else
+                {
+                    return NotFound("Requested chat doesn't exist.");
+                }
+            } 
+            else
+            {
+                return Unauthorized("Invalid format or unknown user.");
+            }
+        }
+
+        /// <summary>
+        /// Obtains chatIds of chats that belongs to user.
+        /// </summary>
+        /// <param name="nexodusToken">Nexodus authentication token.</param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("/chats/list")]
+        public async Task<IActionResult> GetAllChats([FromHeader(Name = "Authorization")] string nexodusToken)
+        {
+            if(await AuthenticateByToken(nexodusToken))
+            {
+                string token = nexodusToken.Substring(8);
+                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+
+                List<Chat> chats = await _chatContext.Chats.Find(c => c.UserId == userId).ToListAsync();
+                List<ChatDTO> displayedChats = new();
+
+                for (int i = 0; i < chats.Count; i++)
+                {
+                    displayedChats.Add(new ChatDTO(chats[i].Id, chats[i].Title));
+                }
+
+                return Ok(displayedChats);
+            }
+            else
+            {
+                return Unauthorized("Invalid format or unknown user.");
+            }
+        }
+
+        /// <summary>
+        /// Updates the chat title if this chat belongs to the authenticated user.
+        /// </summary>
+        /// <param name="update">New chat name.</param>
+        /// <param name="nexodusToken">Nexodus authentication token.</param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> UpdateChatTitle([FromBody] UpdateChat update, [FromHeader(Name = "Authorization")] string nexodusToken)
+        {
+            if(update == null)
+            {
+                return BadRequest("Message is null.");
+            }
+
+            if(string.IsNullOrWhiteSpace(update.Id) || string.IsNullOrWhiteSpace(update.Title))
+            {
+                return BadRequest("Some parameters are either incorrect or missing.");
+            }
+
+            if (await AuthenticateByToken(nexodusToken)) 
+            {
+                string token = nexodusToken.Substring(8);
+                string userId = (await _userContext.Users.Find(u => u.Token == nexodusToken).FirstOrDefaultAsync()).Id;
+                Chat requestedChat;
+
+                try
+                {
+                    requestedChat = await _chatContext.Chats.Find(c => c.Id == update.Id).FirstOrDefaultAsync();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+                if (requestedChat != null)
+                {
+                    if (await AuthorizeUser(userId, requestedChat.Id))
+                    {
+                        update.Title = HttpUtility.HtmlEncode(update.Title).Trim();
+                        requestedChat.Title = update.Title;
+
+                        await _chatContext.Chats.ReplaceOneAsync(c => c.Id == requestedChat.Id, requestedChat);
+                        return Ok("Chat Title was changed with success.");
+                    }
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status403Forbidden, "User doesn't have permission to access this resource.");
+                    }
+                }
                 else
                 {
                     return NotFound("Requested chat doesn't exist.");
