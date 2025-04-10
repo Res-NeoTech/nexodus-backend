@@ -5,6 +5,7 @@ var mongoConnectionString = builder.Configuration.GetConnectionString("MongoDb")
 var mongoDatabaseName = "nexodus";
 
 builder.Services.AddSingleton(new UserContext(mongoConnectionString, mongoDatabaseName));
+builder.Services.AddSingleton(new ChatContext(mongoConnectionString, mongoDatabaseName));
 
 // Add services to the container.
 

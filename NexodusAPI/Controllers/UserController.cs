@@ -74,13 +74,13 @@ namespace NexodusAPI.Controllers
         }
 
         /// <summary>
-        /// Authentificates user by login and password.
+        /// Authenticates user by login and password.
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
         [HttpPost]
         [Route("/crud/auth")]
-        public async Task<IActionResult> Authentificate([FromBody] Login login)
+        public async Task<IActionResult> Authenticate([FromBody] Login login)
         {
             if(login == null)
             {
@@ -92,7 +92,7 @@ namespace NexodusAPI.Controllers
                 return BadRequest("Email or password is missing.");
             }
 
-            if(!VerifyCredentials(login.Email, login.Password))
+            if(!await VerifyCredentials(login.Email, login.Password))
             {
                 return Unauthorized("Invalid email or password.");
             } 
@@ -163,14 +163,14 @@ namespace NexodusAPI.Controllers
         }
 
         /// <summary>
-        /// Verifies user by entered email and password.
+        /// Verifies user by provided email and password.
         /// </summary>
         /// <param name="email">user-entered email.</param>
         /// <param name="password">user-entered password</param>
-        /// <returns>True if user exists and password is correct. False if not.</returns>
-        private bool VerifyCredentials(string email, string password)
+        /// <returns>True if the user exists and the password is correct. False if not.</returns>
+        private async Task<bool> VerifyCredentials(string email, string password)
         {
-            User user = _userContext.Users.Find(u => u.Email == email).FirstOrDefault();
+            User user = await _userContext.Users.Find(u => u.Email == email).FirstOrDefaultAsync();
 
             if (user == null)
             {

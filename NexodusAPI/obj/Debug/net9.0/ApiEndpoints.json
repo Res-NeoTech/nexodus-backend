@@ -1,7 +1,80 @@
 [
   {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "CreateChat",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "message",
+        "Type": "NexodusAPI.Models.Message",
+        "IsRequired": true
+      },
+      {
+        "Name": "Authorization",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "GetChat",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Authorization",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "AuthorizeUser",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "chatId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "NexodusAPI.Controllers.UserController",
-    "Method": "Authentificate",
+    "Method": "Authenticate",
     "RelativePath": "crud/auth",
     "HttpMethod": "POST",
     "IsController": true,

@@ -12,9 +12,6 @@ namespace NexodusAPI.Models
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Token { get; set; } = string.Empty;
-
-        [BsonRepresentation(BsonType.ObjectId)]
-        public List<string> ChatIds { get; set; } = new List<string>();
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
