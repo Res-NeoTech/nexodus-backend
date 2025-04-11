@@ -268,6 +268,53 @@ namespace NexodusAPI.Controllers
         }
 
         /// <summary>
+        /// Deletes a chat if it belongs to the authenticated user.
+        /// </summary>
+        /// <param name="nexodusToken">Nexodus authentication token.</param>
+        /// <param name="chatId">Id of the requested chat.</param>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> DeleteChat([FromHeader(Name = "Authorization")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
+        {
+            if (await AuthenticateByToken(nexodusToken))
+            {
+                string token = nexodusToken.Substring(8);
+                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                Chat requestedChat;
+
+                try
+                {
+                    requestedChat = await _chatContext.Chats.Find(c => c.Id == chatId).FirstOrDefaultAsync();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+                if (requestedChat != null)
+                {
+                    if (await AuthorizeUser(userId, requestedChat.Id))
+                    {
+                        await _chatContext.Chats.FindOneAndDeleteAsync(c => c.Id == requestedChat.Id);
+                        return Ok("Chat was successfully deleted.");
+                    } 
+                    else
+                    {
+                        return StatusCode(StatusCodes.Status403Forbidden, "User doesn't have permission to access this resource.");
+                    }
+                }
+                else
+                {
+                    return NotFound("Requested chat doesn't exist.");
+                }
+            }
+            else
+            {
+                return Unauthorized("Invalid format or unknown user.");
+            }
+        }
+
+        /// <summary>
         /// Authenticates user by the provided token.
         /// </summary>
         /// <param name="token">Nexodus authentication token.</param>
