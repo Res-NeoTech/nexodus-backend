@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using NexodusAPI.Models;
+﻿using NexodusAPI.Models;
 using MongoDB.Driver;
 using Microsoft.AspNetCore.Mvc;
 using System.Web;
@@ -12,15 +11,17 @@ namespace NexodusAPI.Controllers
     {
         private readonly ChatContext _chatContext;
         private readonly UserContext _userContext;
+        private readonly ILogger<ChatController> _logger;
 
         /// <summary>
         /// Constructor for ChatController.
         /// </summary>
         /// <param name="chatContext"></param>
-        public ChatController(ChatContext chatContext, UserContext userContext)
+        public ChatController(ChatContext chatContext, UserContext userContext, ILogger<ChatController> logger)
         {
             _chatContext = chatContext;
             _userContext = userContext;
+            _logger = logger;
         }
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace NexodusAPI.Controllers
         /// <param name="nexodusToken">Nexodus authentication token.</param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> CreateChat([FromBody] Message message, [FromHeader(Name = "Authorization")] string nexodusToken)
+        public async Task<IActionResult> CreateChat([FromBody] Message message, [FromHeader(Name = "x-nexodus-token")] string nexodusToken)
         {
             if(message == null)
             {
@@ -44,9 +45,7 @@ namespace NexodusAPI.Controllers
 
             if (await AuthenticateByToken(nexodusToken))
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
-                message.Content = HttpUtility.HtmlEncode(message.Content).Trim();
+                string userId = await GetUserIdFromToken(nexodusToken);
 
                 Chat newChat = new();
                 newChat.UserId = userId;
@@ -75,12 +74,11 @@ namespace NexodusAPI.Controllers
         /// <param name="chatId">Id of the requested chat.</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IActionResult> GetChat([FromHeader(Name = "Authorization")] string nexodusToken, [FromQuery(Name = "id")]string chatId)
+        public async Task<IActionResult> GetChat([FromHeader(Name = "x-nexodus-token")] string nexodusToken, [FromQuery(Name = "id")]string chatId)
         {
-            if (await AuthenticateByToken(nexodusToken)) 
+            if (await AuthenticateByToken(nexodusToken))
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                string userId = await GetUserIdFromToken(nexodusToken);
                 Chat requestedChat;
 
                 try
@@ -88,7 +86,8 @@ namespace NexodusAPI.Controllers
                     requestedChat = await _chatContext.Chats.Find(c => c.Id == chatId).FirstOrDefaultAsync();
                 }
                 catch (Exception ex) 
-                { 
+                {
+                    _logger.LogError($"GetChat Exception at {DateTime.Now} by userId : {userId} Message: {ex.Message}");
                     return BadRequest(ex.Message);
                 }
 
@@ -121,17 +120,16 @@ namespace NexodusAPI.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("/chats/list")]
-        public async Task<IActionResult> GetAllChats([FromHeader(Name = "Authorization")] string nexodusToken)
+        public async Task<IActionResult> GetAllChats([FromHeader(Name = "x-nexodus-token")] string nexodusToken)
         {
             if(await AuthenticateByToken(nexodusToken))
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                string userId = await GetUserIdFromToken(nexodusToken);
 
                 List<Chat> chats = await _chatContext.Chats.Find(c => c.UserId == userId).ToListAsync();
                 List<ChatDTO> displayedChats = new();
 
-                for (int i = 0; i < chats.Count; i++)
+                for (int i = chats.Count - 1; i >= 0; i--)
                 {
                     displayedChats.Add(new ChatDTO(chats[i].Id, chats[i].Title));
                 }
@@ -151,22 +149,21 @@ namespace NexodusAPI.Controllers
         /// <param name="nexodusToken">Nexodus authentication token.</param>
         /// <returns></returns>
         [HttpPut]
-        public async Task<IActionResult> UpdateChatTitle([FromBody] UpdateChat update, [FromHeader(Name = "Authorization")] string nexodusToken)
+        public async Task<IActionResult> UpdateChatTitle([FromBody] UpdateChat update, [FromHeader(Name = "x-nexodus-token")] string nexodusToken)
         {
             if(update == null)
             {
                 return BadRequest("Update info is null.");
             }
 
-            if(string.IsNullOrWhiteSpace(update.Id) || string.IsNullOrWhiteSpace(update.Title))
+            if(string.IsNullOrWhiteSpace(update.Id) || string.IsNullOrWhiteSpace(update.Title) || update.Title.Length > 50)
             {
                 return BadRequest("Some parameters are either incorrect or missing.");
             }
 
             if (await AuthenticateByToken(nexodusToken)) 
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                string userId = await GetUserIdFromToken(nexodusToken);
                 Chat requestedChat;
 
                 try
@@ -175,6 +172,7 @@ namespace NexodusAPI.Controllers
                 }
                 catch (Exception ex)
                 {
+                    _logger.LogError($"UpdateChatTitle Exception at {DateTime.Now} by userId : {userId} Message: {ex.Message}");
                     return BadRequest(ex.Message);
                 }
 
@@ -213,7 +211,7 @@ namespace NexodusAPI.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("/chats/append")]
-        public async Task<IActionResult> AppendChatContent([FromBody] Message newMessage, [FromHeader (Name = "Authorization")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
+        public async Task<IActionResult> AppendChatContent([FromBody] Message newMessage, [FromHeader (Name = "x-nexodus-token")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
         {
             if (newMessage == null)
             {
@@ -227,8 +225,7 @@ namespace NexodusAPI.Controllers
 
             if(await AuthenticateByToken(nexodusToken))
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                string userId = await GetUserIdFromToken(nexodusToken);
                 Chat requestedChat;
 
                 try
@@ -237,6 +234,7 @@ namespace NexodusAPI.Controllers
                 }
                 catch (Exception ex)
                 {
+                    _logger.LogError($"AppendChat Exception at {DateTime.Now} by userId : {userId} Message: {ex.Message}");
                     return BadRequest(ex.Message);
                 }
 
@@ -244,7 +242,6 @@ namespace NexodusAPI.Controllers
                 {
                     if (await AuthorizeUser(userId, requestedChat.Id))
                     {
-                        newMessage.Content = HttpUtility.HtmlEncode(newMessage.Content).Trim();
                         requestedChat.Messages.Add(newMessage);
 
                         await _chatContext.Chats.ReplaceOneAsync(c => c.Id == requestedChat.Id, requestedChat);
@@ -274,12 +271,11 @@ namespace NexodusAPI.Controllers
         /// <param name="chatId">Id of the requested chat.</param>
         /// <returns></returns>
         [HttpDelete]
-        public async Task<IActionResult> DeleteChat([FromHeader(Name = "Authorization")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
+        public async Task<IActionResult> DeleteChat([FromHeader(Name = "x-nexodus-token")] string nexodusToken, [FromQuery(Name = "id")] string chatId)
         {
             if (await AuthenticateByToken(nexodusToken))
             {
-                string token = nexodusToken.Substring(8);
-                string userId = (await _userContext.Users.Find(u => u.Token == token).FirstOrDefaultAsync()).Id;
+                string userId = await GetUserIdFromToken(nexodusToken);
                 Chat requestedChat;
 
                 try
@@ -288,6 +284,7 @@ namespace NexodusAPI.Controllers
                 }
                 catch (Exception ex)
                 {
+                    _logger.LogError($"DeleteChat Exception at {DateTime.Now} by userId : {userId} Message: {ex.Message}");
                     return BadRequest(ex.Message);
                 }
 
@@ -345,6 +342,16 @@ namespace NexodusAPI.Controllers
         {
             Chat chat = await _chatContext.Chats.Find(c => c.UserId == userId && c.Id == chatId).FirstOrDefaultAsync();
             return chat != null;
+        }
+
+        /// <summary>
+        /// Obtains user id from his token.
+        /// </summary>
+        /// <param name="token">Nexodus authentication token(whole token, even with Nexodus prefix).</param>
+        /// <returns>User id.</returns>
+        public async Task<string> GetUserIdFromToken(string token)
+        {
+            return (await _userContext.Users.Find(u => u.Token == token.Substring(8)).FirstOrDefaultAsync()).Id;
         }
     }
 }

@@ -5,7 +5,6 @@ using NexodusAPI.Utils;
 using MongoDB.Driver;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace NexodusAPI.Controllers
 {
@@ -14,14 +13,16 @@ namespace NexodusAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserContext _userContext;
+        private readonly ILogger<UserController> _logger;
 
         /// <summary>
         /// Constructor for UserController.
         /// </summary>
         /// <param name="userContext"></param>
-        public UserController(UserContext userContext)
+        public UserController(UserContext userContext, ILogger<UserController> logger)
         {
             _userContext = userContext;
+            _logger = logger;
         }
 
         /// <summary>
@@ -69,6 +70,7 @@ namespace NexodusAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError($"CreateUser Exception at {DateTime.Now} Message: {ex.Message}");
                 return StatusCode(500, "An error occurred while creating the user.");
             }
         }
@@ -108,7 +110,7 @@ namespace NexodusAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUser([FromHeader(Name = "Authorization")] string nexodusToken)
+        public async Task<IActionResult> GetUser([FromHeader(Name = "x-nexodus-token")] string nexodusToken)
         {
             if (nexodusToken.StartsWith("Nexodus "))
             {
@@ -140,9 +142,9 @@ namespace NexodusAPI.Controllers
                 return false;
             }
 
-            if (user.Name.Length < 3 || user.Name.Length > 50)
+            if (user.Name.Length <= 3 || user.Name.Length > 50)
             {
-                message = "Name must be between 3 and 50 characters.";
+                message = "Name must be between 4 and 50 characters.";
                 return false;
             }
 

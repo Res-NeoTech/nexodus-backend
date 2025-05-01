@@ -153,3 +153,9 @@ C:\Users\Maksym\Documents\GitHub\nexodus-backend\NexodusAPI\obj\Debug\net9.0\ref
 C:\Users\Maksym\Documents\GitHub\nexodus-backend\NexodusAPI\obj\Debug\net9.0\NexodusAPI.pdb
 C:\Users\Maksym\Documents\GitHub\nexodus-backend\NexodusAPI\obj\Debug\net9.0\NexodusAPI.genruntimeconfig.cache
 C:\Users\Maksym\Documents\GitHub\nexodus-backend\NexodusAPI\obj\Debug\net9.0\ref\NexodusAPI.dll
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\web.config
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\appsettings.Development.json
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\appsettings.json
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\NexodusAPI.deps.json
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\NexodusAPI.runtimeconfig.json
+D:\nexodus-backend\NexodusAPI\bin\Debug\net9.0\publish\NexodusAPI.staticwebassets.endpoints.json

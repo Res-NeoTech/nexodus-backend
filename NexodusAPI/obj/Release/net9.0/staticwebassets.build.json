@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "YmDz8NRmVQNzdXMaikYQ4LTJtfFk2zwfKdGj6kyXToI=",
+  "Source": "NexodusAPI",
+  "BasePath": "_content/NexodusAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "NexodusAPI.Controllers.MainController",
+    "Method": "HeartBeatCheck",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NexodusAPI.Controllers.ChatController",
     "Method": "AppendChatContent",
     "RelativePath": "chats/append",
@@ -13,7 +23,7 @@
         "IsRequired": true
       },
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -39,7 +49,7 @@
         "IsRequired": true
       },
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -55,7 +65,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -81,7 +91,28 @@
         "IsRequired": true
       },
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "DeleteChat",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "x-nexodus-token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -121,6 +152,32 @@
   },
   {
     "ContainingType": "NexodusAPI.Controllers.ChatController",
+    "Method": "GetUserIdFromToken",
+    "RelativePath": "chats/Chat",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NexodusAPI.Controllers.ChatController",
     "Method": "GetAllChats",
     "RelativePath": "chats/list",
     "HttpMethod": "GET",
@@ -128,7 +185,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -176,7 +233,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Authorization",
+        "Name": "x-nexodus-token",
         "Type": "System.String",
         "IsRequired": false
       }
