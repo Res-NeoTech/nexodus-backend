@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexodusAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13be73ac278ed1b21af25e0e0822e0eae6f4ef7e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31a78d3c22754cf4abc9aa211e4d98b87928a7c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexodusAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexodusAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

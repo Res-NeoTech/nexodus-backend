@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NexodusAPI.Attributes;
 
 namespace NexodusAPI.Controllers
 {
@@ -7,6 +8,7 @@ namespace NexodusAPI.Controllers
     public class MainController : ControllerBase
     {
         [HttpGet]
+        [BypassProxyValidation]
         public IActionResult HeartBeatCheck()
         {
             return Ok("Heartbeat, my heartbeat.");

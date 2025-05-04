@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 
 namespace NexodusAPI.Utils
 {
@@ -73,6 +74,17 @@ namespace NexodusAPI.Utils
                 byte[] tokenBytes = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(email));
                 return Convert.ToBase64String(tokenBytes);
             }
+        }
+
+        /// <summary>
+        /// Decodes a base64 string.
+        /// </summary>
+        /// <param name="base64EncodedString">Base64 encoded string.</param>
+        /// <returns>A string decoded from base64.</returns>
+        public static string DecodeFromBase64(string base64EncodedString)
+        {
+            byte[] data = Convert.FromBase64String(base64EncodedString);
+            return Encoding.UTF8.GetString(data);
         }
     }
 }

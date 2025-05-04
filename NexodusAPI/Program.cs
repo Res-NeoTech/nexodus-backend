@@ -1,4 +1,5 @@
 using NexodusAPI.Models;
+using NexodusAPI.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 var mongoConnectionString = builder.Configuration.GetConnectionString("MongoDb") ?? "mongodb://admin:admin@localhost:27017"; // Nuh uh, no way someone is thinking we are using this in production. Good luck with locating the dev server first.
@@ -9,7 +10,10 @@ builder.Services.AddSingleton(new ChatContext(mongoConnectionString, mongoDataba
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ProxyValidationFilter>(); // Register the filter here
+});
 builder.Services.AddEndpointsApiExplorer();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
